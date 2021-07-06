@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-add-user',
@@ -8,17 +9,26 @@ import { Component, OnInit } from '@angular/core';
 export class AddUserComponent implements OnInit {
 
   form: any = {
-    email: null,
-    password: null
+    firstName: null,
+    lastName: null,
+    teamId: null
   }
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-    
+    const {firstName, lastName, teamId} = this.form;
+    this.userService.createUser(firstName, lastName, teamId).subscribe(
+      data => {
+        alert("Pomyślnie dodano użytkownika!");
+      },
+      error => {
+        console.log(error);
+        alert("Błąd, użytkownik nie został dodany" + error.error.message);
+      })
   }
 
 }

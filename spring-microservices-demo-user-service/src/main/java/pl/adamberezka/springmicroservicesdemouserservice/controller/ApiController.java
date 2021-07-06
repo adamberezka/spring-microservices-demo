@@ -8,6 +8,8 @@ import pl.adamberezka.springmicroservicesdemouserservice.service.UserService;
 
 import java.util.List;
 
+
+@CrossOrigin
 @RestController
 @RequestMapping("/user")
 public class ApiController {

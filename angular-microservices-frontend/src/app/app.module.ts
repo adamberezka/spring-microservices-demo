@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddUserComponent } from './add-user/add-user.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [],
